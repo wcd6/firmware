@@ -13,7 +13,9 @@ void NRF24Menu::optionsMenu() {
     #if !defined(LITE_VERSION)
     options.push_back({"MouseJack", nrf_mousejack});
     #endif
-    options.push_back({"NRF Jammer", nrf_jammer});
+options.push_back({"NRF Jammer", nrf_jammer});
+    options.push_back({"CH Jammer", nrf_channel_jammer});
+    options.push_back({"CH hopper", nrf_channel_hopper});
 
 #if defined(ARDUINO_M5STICK_C_PLUS) || defined(ARDUINO_M5STICK_C_PLUS2)
     options.push_back({"Config pins", [this]() { configMenu(); }});
@@ -121,3 +123,4 @@ void NRF24Menu::drawIcon(float scale) {
         caseX + caseW - 2 * antW - connR, caseY + caseH / 2 - antW / 2, antW, antW, bruceConfig.priColor
     );
 }
+
